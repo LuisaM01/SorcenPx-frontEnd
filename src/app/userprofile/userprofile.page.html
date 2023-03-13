@@ -1,0 +1,74 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>ID 1</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="usersadmin"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Stiven Benjumea</ion-card-title>
+      <ion-card-content>
+        <ion-card-title><h2>Correo</h2></ion-card-title>
+        <ion-card-subtitle>stevenbenjumea9@gmail.com</ion-card-subtitle>
+
+        <ion-card-title><h2>Nombre aseguradora</h2></ion-card-title>
+        <ion-card-subtitle>SURA</ion-card-subtitle>
+        
+        <ion-card-title><h2>Rol</h2></ion-card-title>
+        <ion-card-subtitle>Cliente</ion-card-subtitle>
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Vehiculos</ion-card-title>
+      <ion-card-subtitle>Presiona el vehiculo perteneciente al usuario </ion-card-subtitle>
+
+      <ion-card-content class="vehiculos">
+        <div class="profilevehicle" >
+          <ion-card class="cardvehiculo" routerLink="/adminvehicleprofile">
+            <img src="../../assets/img/coche.png" alt="" />
+            <ion-card-title>HYD 623</ion-card-title>
+          </ion-card>
+        </div>
+        <div class="profilevehicle" >
+          <ion-card class="cardvehiculo1" routerLink="/adminvehicleprofile">
+            <img src="../../assets/img/motobiker.png" alt="" />
+            <ion-card-title>IAT 439</ion-card-title>
+          </ion-card>
+        </div>
+
+        <div class="profilevehicle" >
+          <ion-card class="cardvehiculo2" routerLink="/adminvehicleprofile">
+            <img src="../../assets/img/motobiker.png" alt="" />
+            <ion-card-title>IAT 439</ion-card-title>
+          </ion-card>
+        </div>
+
+        <div class="profilevehicle" >
+          <ion-card class="cardvehiculo3"routerLink="/adminvehicleprofile">
+            <img src="../../assets/img/coche.png" alt="" />
+            <ion-card-title>IAT 439</ion-card-title>
+          </ion-card>
+        </div>
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card routerLink="/usersadmin">
+    <ion-card-header class="delete">
+      <ion-card-title>Eliminar usuario</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card routerLink="/usersadmin">
+    <ion-card-header class="save">
+      <ion-card-title>Listo</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

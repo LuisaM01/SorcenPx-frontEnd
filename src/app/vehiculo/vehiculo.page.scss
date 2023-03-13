@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+ion-content {
+  --background: #fff;
+  transition: 0.3s;
+
+  img {
+    width: 100%;
+  }
+
+  .header {
+    color: #000;
+    text-align: center;
+
+    h1 {
+      font-size: 3em;
+      font-family: "Pacifico", cursive;
+      // font-weight: bold;
+    }
+  }
+
+  .title {
+    margin-top: 3em;
+
+    h1 {
+      color: #000;
+      margin: 0 0 0 0.8rem;
+      border-bottom: 3px solid;
+      width: 85%;
+      font-weight: 600;
+    }
+
+    h1 span {
+      color: #63199f;
+      font-size: 30px;
+      font-weight: normal;
+      font-family: "Pacifico", cursive;
+    }
+  }
+
+  .card {
+    overflow: auto;
+    gap: 1px;
+    height: 48vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, auto));
+
+    ion-card {
+      display: grid;
+      place-items: center;
+      grid-template-columns: 50% 50%;
+      border-radius: 5px;
+      height: 20vh;
+      background: #68686846;
+      padding: 2em;
+    }
+
+    ion-card img {
+      width: 65%;
+    }
+    ion-card-title {
+      color: #000;
+      font-weight: bold;
+      font-size: 2em;
+    }
+  }
+
+  .ion-add-car {
+    position: relative;
+    right: 3em;
+    border-radius: 2rem;
+
+    ion-button {
+      width: 150px;
+      height: 50px;
+      font-size: 1.1rem;
+      --border-radius: 10px;
+      --background: #63199f;
+    }
+  }
+}
+
+@media only screen and (max-height: 668px) {
+  ion-content {
+    .card {
+      height: 32vh;
+
+      ion-card {
+        height: 28vh;
+
+        ion-card-title {
+          font-size: 29px;
+        }
+
+        ion-card-subtitle {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-height: 759px) and (max-width: 761px) {
+  ion-content {
+    .card {
+      height: 40vh;
+
+      ion-card {
+        height: 22vh;
+
+        ion-card-title {
+          font-size: 29px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: 914px) {
+  ion-content {
+    .card {
+      height: 48vh;
+
+      ion-card {
+        height: 22vh;
+
+        ion-card-title {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: 1078px) {
+  ion-content {
+    .card {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      height: 42vh;
+
+      ion-card {
+        height: 22vh;
+
+        ion-card-title {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

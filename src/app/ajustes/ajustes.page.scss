@@ -1,0 +1,170 @@
+ion-content {
+  --background: #fff;
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+
+    .bg {
+      width: 98%;
+      border-radius: 10px;
+      padding: 2em 0 0 1em;
+      height: 20vh;
+
+      h1 {
+        color: #000;
+        font-weight: bold;
+        font-size: 2.5em;
+      }
+
+      p {
+        color: #000;
+        position: relative;
+      }
+    }
+  }
+  .content {
+    border: 2px solid rgb(255, 255, 255);
+    height: 31em;
+    margin-top: 5em;
+    h1 {
+      color: #63199f;
+      font-weight: bold;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    ion-card {
+      --background: #ffffff;
+      // margin-top: 4em;
+
+      ion-card-header {
+        ion-card-title {
+          --color: #000;
+          font-size: 18px;
+          padding: 0 0 0 0.3em;
+        }
+      }
+      ion-card-content {
+        input {
+          border-radius: 10px;
+          background: #dfdfdf;
+          width: 100%;
+          height: 3em;
+          padding: 0.5em;
+          border: none;
+          outline: none;
+        }
+
+        input::placeholder {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .contra {
+    height: 13em;
+    margin-top: 2em;
+    // border: 2px solid red;
+    form {
+      display: grid;
+      gap: 1em;
+    }
+  }
+
+  .logout {
+    background: #ff4961;
+    // border: 2px solid red;
+    ion-card-header {
+      ion-card-title {
+        color: #fff;
+      }
+    }
+  }
+
+  .footer {
+    color: #000;
+    border: 2px solid #ffff;
+    display: grid;
+    place-items: center;
+
+    ion-button {
+      position: fixed;
+      bottom: .5em;
+      width: 8em;
+      display: grid;
+      place-items: center;
+      height: 3pc;
+      color: #fff;
+      --border-radius: 8px;
+      --background: #63199f;
+      // padding: 0 0 0 0.3em;
+      font-size: 1em;
+    }
+  }
+}
+
+@media only screen and (max-height: 668px) {
+  ion-content {
+    .header {
+      .bg {
+        h1 {
+          font-size: 1.6em;
+        }
+      }
+    }
+
+    .content {
+      // height: 32em;
+      margin-top: 1em;
+      h1 {
+        margin-top: 0;
+        font-size: 1.3em;
+      }
+      ion-card {
+        ion-card-header {
+          ion-card-title {
+            font-size: 18px;
+          }
+        }
+        ion-card-content {
+          input {
+            height: 2em;
+            padding: 0.5em;
+            border: none;
+            outline: none;
+          }
+
+          input::placeholder {
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .contra {
+      height: 12em;
+
+      form {
+        display: grid;
+        gap: 0.6em;
+      }
+    }
+
+    .footer {
+      color: #000;
+      display: grid;
+      place-items: center;
+
+      ion-button {
+        width: 7em;
+        height: 3pc;
+        font-size: .5em;
+      }
+    }
+  }
+}
+
+

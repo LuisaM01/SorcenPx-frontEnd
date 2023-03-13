@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+
+  <div class="header">
+    <img src="../../assets/img/admin.jpg" alt="" />
+    <h1>Inicia sesión.</h1>
+    <p>Ingresa tu correo y contraseña dada por el  <br /> desarrollador para acceder a tus beneficios como administrador.</p>
+  </div>
+  <div class="form">
+    <ion-input
+      type="email"
+      autocomplete="off"
+      placeholder="Ingresa tu correo"
+    ></ion-input>
+    <ion-input
+      type="password"
+      autocomplete="off"
+      placeholder="Ingresa tu contraseña"
+      ><ion-icon name="eye-outline"></ion-icon
+    ></ion-input>
+  </div>
+  <div class="button">
+    <ion-button shape="round" routerLink="/usersadmin">Iniciar sesión</ion-button>
+  </div>
+
+</ion-content>

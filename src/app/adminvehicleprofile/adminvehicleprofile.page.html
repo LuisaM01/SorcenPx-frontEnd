@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>MT 09</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="userprofile"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="vehicule">
+    <img src="../../assets/img/carros.png" alt="" />
+
+    <ion-card-title class="ion-text-center">MDS - 732</ion-card-title>
+    <ion-card-header class="infovehiculo">
+      <ion-card-content>
+        <ion-card-title><h2>Marca</h2></ion-card-title>
+        <ion-card-subtitle>Yamaha</ion-card-subtitle>
+
+        <ion-card-title><h2>Color</h2></ion-card-title>
+        <ion-card-subtitle>Azul</ion-card-subtitle>
+      </ion-card-content>
+      
+      <ion-card-content>
+        <ion-card-title><h2>Modelo</h2></ion-card-title>
+        <ion-card-subtitle>MT 09</ion-card-subtitle>
+
+        <ion-card-title><h2>Aseguradora</h2></ion-card-title>
+        <ion-card-subtitle>SURA</ion-card-subtitle>
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card class="fechayhora">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">
+        Hora y fecha de entrada y salida
+      </ion-card-title>
+
+      <ion-card-content class="entrada">
+        <div class="profilevehicle">
+          <ion-card-title><h1>Fecha de entrada</h1></ion-card-title>
+          <input type="text" placeholder="AA-MM-DD">
+        </div>
+
+        <div class="profilevehicle">
+          <ion-card-title><h1>Hora de entrada</h1></ion-card-title>
+          <input type="text" placeholder="HH:MM">
+        </div>
+
+        <div class="profilevehicle">
+          <ion-card-title><h1>Fecha de salida</h1></ion-card-title>
+          <input type="text" placeholder="AA-MM-DD">
+        </div>
+
+        <div class="profilevehicle">
+          <ion-card-title><h1>Hora de salida</h1></ion-card-title>
+          <input type="text" placeholder="HH:MM">
+        </div>
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card routerLink="/userprofile">
+    <ion-card-header class="save">
+      <ion-card-title>Guardar</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

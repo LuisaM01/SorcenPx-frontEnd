@@ -1,0 +1,53 @@
+<ion-content>
+  <div class="header">
+    <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+    <h1>Agrega tu vehiculo</h1>
+  </div>
+  <form class="form">
+    <ion-item>
+      <ion-label>Tipo de vehiculo</ion-label>
+      <ion-select
+        aria-label="vehiculos"
+        interface="action-sheet"
+        placeholder="Seleccionar"
+      >
+        <ion-select-option value="Carro">Carro</ion-select-option>
+        <ion-select-option value="Moto">Moto</ion-select-option>
+        <ion-select-option value="Bicicleta">Bicicleta</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <input type="text" placeholder="Marca del vehiculo" autocomplete="off" />
+    <input type="text" placeholder="Modelo del vehiculo" autocomplete="off" />
+    <input type="text" placeholder="Placa del vehiculo" autocomplete="off" />
+
+    <ion-card class="fechayhora">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">
+          Datos de la aseguradora
+        </ion-card-title>
+
+        <ion-card-content class="entrada">
+          <div class="profilevehicle">
+            <ion-card-title><h1>Nombre de la aseguradora</h1></ion-card-title>
+            <input type="text" placeholder="Ejem: SURA" />
+          </div>
+
+          <div class="profilevehicle">
+            <ion-card-title><h1>Fecha de expedicion</h1></ion-card-title>
+            <input type="text" placeholder="AA-MM-DD" />
+          </div>
+
+          <div class="profilevehicle">
+            <ion-card-title><h1>Fecha de vencimiento</h1></ion-card-title>
+            <input type="text" placeholder="AA-MM-DD" />
+          </div>
+        </ion-card-content>
+      </ion-card-header>
+    </ion-card>
+  </form>
+
+  <div class="footer">
+    <ion-button shape="round" routerLink="/tabs"> Listo </ion-button>
+  </div>
+</ion-content>

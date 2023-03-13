@@ -1,0 +1,50 @@
+<ion-content>
+
+  <div class="header">
+    <div class="bg">
+      <h1>Stiven Benjumea Morales</h1>
+      <p>stevenbenjumea9@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h1>Actualiza tus datos</h1>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Correo</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form>
+          <input type="email" placeholder="Correo" autocomplete="off" />
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="contra">
+      <ion-card-header>
+        <ion-card-title>Contraseña</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form>
+          <input type="password" placeholder="Contraseña nueva"  autocomplete="off"/>
+          <input type="password" placeholder="Contraseña confirmar contraseña"  autocomplete="off"/>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card routerLink="/home" class="logout">
+      <ion-card-header>
+        <ion-card-title>Cerrar sesion</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <div class="footer">
+      <ion-button expand="block" shape="round">
+        Guardar
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

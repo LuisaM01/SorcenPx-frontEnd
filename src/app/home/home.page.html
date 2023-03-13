@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true" class=" ">
+  <div class="style"></div>
+  <div class="welcome">
+    <ion-icon name="chevron-back-outline" routerLink="/roles"></ion-icon>
+    <img src="../../assets/img/navigacion.svg" alt="" />
+  </div>
+  <ion-text>
+    <h1>Bienvenido.</h1>
+    <p>
+      Inicia sesión en s.a.s. <br />
+      Si no cuentas con una cuenta puedes crear una.
+    </p>
+  </ion-text>
+
+  <div class="actions">
+    <div class="login-buttons">
+      <ion-button class="login" routerLink="/login">Inicia sesión</ion-button>
+      <ion-button expand="block" fill="clear" routerLink="/register">Registrate</ion-button>
+    </div>
+  </div>
+</ion-content>
