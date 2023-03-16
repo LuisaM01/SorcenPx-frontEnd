@@ -8,29 +8,22 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./usersadmin.page.scss'],
 })
 export class UsersadminPage implements OnInit {
-  usuarios = [];
+  listUsuarios: any;
 
   constructor(
     private _usuariosService: UsuarioService,
     private http: HttpClient
-  ) { }
+  ) {}
 
   ngOnInit() {
-
     this.getUsuarios();
-
-
-    // this.http.get<any>("https://sorcenpx.up.railway.app/api/usuarios")
-    // .subscribe(({ rows }) => {   
-    //   const usuariosNombre = rows.map((item: any) => item.nombre.charAt(0).toUpperCase() + item.nombre.slice(1));
-    //   return this.usuarios = usuariosNombre;
-    // })
   }
+
+  // getUsuarios() {
+  //   this._usuariosService.getUsuarios().subscribe((data) => this.listUsuarios = data.rows);
+  // }
 
   getUsuarios() {
-    this._usuariosService.getUsuarios().subscribe(data => {
-      console.log(data);
-    })
+    this._usuariosService.getUsuarios().subscribe((data: { rows: any; }) => this.listUsuarios = data.rows);
   }
-
 }

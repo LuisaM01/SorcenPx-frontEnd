@@ -26,10 +26,10 @@ export class UsuarioService {
     return this.http.post<string>(`${this.MyAppUrl}${this.MyApiUrl}/auth/login`, usuario)
   }
 
-  getUsuarios(): Observable<Usuarios[]> {
-    // const token = localStorage.getItem('token')
-    // const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
-    // return this.http.get<Usuarios[]>(`${this.MyAppUrl}${this.MyApiUrl}/usuarios`, { headers: headers })
-    return this.http.get<Usuarios[]>(`${this.MyAppUrl}${this.MyApiUrl}/usuarios`)
+  getUsuarios(): Observable<any> {
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    return this.http.get<any>(`${this.MyAppUrl}${this.MyApiUrl}/usuarios`, { headers: headers })
+    // return this.http.get<Usuarios[]>(`${this.MyAppUrl}${this.MyApiUrl}/usuarios`)
   }
-}
+} 

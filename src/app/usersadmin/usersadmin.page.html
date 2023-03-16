@@ -9,11 +9,11 @@
   </div>
 
   <div class="card">
-    <div class="cards" routerLink="/userprofile">
+    <div *ngFor="let item of listUsuarios" class="cards" [routerLink]="['/userprofile/'  + item.id_usuarios]"  >
       <ion-card >
         <ion-card-content >
-          <ion-card-subtitle> ID 1</ion-card-subtitle>
-          <ion-card-title>Stiven Benjumea</ion-card-title>
+          <ion-card-subtitle> ID {{ item.id_usuarios }}</ion-card-subtitle>
+          <ion-card-title>{{ item.nombre }} {{ item.apellido }}</ion-card-title>
         </ion-card-content>
 
         <img src="../../assets/img/usuario.png" alt="" class="user" />
