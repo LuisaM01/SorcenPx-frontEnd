@@ -34,7 +34,8 @@ const routes: Routes = [
   {
     path: 'roles',
     loadChildren: () => import('./roles/roles.module').then( m => m.RolesPageModule)
-  },  {
+  },
+  {
     path: 'loginadmin',
     loadChildren: () => import('./loginadmin/loginadmin.module').then( m => m.LoginadminPageModule)
   },
@@ -54,7 +55,6 @@ const routes: Routes = [
     path: 'adminvehicleprofile',
     loadChildren: () => import('./adminvehicleprofile/adminvehicleprofile.module').then( m => m.AdminvehicleprofilePageModule)
   },
-
 
   /* {
     path: '**',

@@ -8,11 +8,15 @@
   </div>
   <div class="form">
     <ion-input
+      [(ngModel)]="correo"
+      name="correo"
       type="email"
       autocomplete="off"
       placeholder="Ingresa tu correo"
     ></ion-input>
     <ion-input
+      [(ngModel)]="contrasena"
+      name="contrasena"
       type="password"
       autocomplete="off"
       placeholder="Ingresa tu contraseña"
@@ -20,7 +24,7 @@
     ></ion-input>
   </div>
   <div class="button">
-    <ion-button shape="round" routerLink="/welcome">Iniciar sesión</ion-button>
+    <ion-button shape="round" (click)="login()">Iniciar sesión</ion-button>
   </div>
   <div class="footer">
     <p>¿No tienes una cuenta? <a routerLink="/register">Crea una</a>.</p>

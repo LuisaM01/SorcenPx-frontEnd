@@ -4,16 +4,17 @@
   <div class="header">
     <h1>Crea tu cuenta.</h1>
   </div>
+  
   <form class="form">
-    <ion-input type="name" placeholder="Primer nombre" autocomplete="off"></ion-input>
-    <ion-input type="name" placeholder="Primer apellido" autocomplete="off"></ion-input>
-    <ion-input type="email" placeholder="Ingresa tu correo" autocomplete="off"></ion-input>
-    <ion-input type="password" placeholder="Ingresa tu contraseña" autocomplete="off"><ion-icon name="eye-outline"></ion-icon></ion-input>
-    <ion-input type="password" placeholder="Confirma tu contraseña" autocomplete="off"><ion-icon name="eye-outline"></ion-icon></ion-input>
+    <ion-input [(ngModel)]="nombre" type="text" placeholder="Primer nombre" autocomplete="off" name="nombre"></ion-input>
+    <ion-input [(ngModel)]="apellido" type="text" placeholder="Primer apellido" autocomplete="off" name="apellido"></ion-input>
+    <ion-input [(ngModel)]="correo" type="email" placeholder="Ingresa tu correo" autocomplete="off" name="correo"></ion-input>
+    <ion-input [(ngModel)]="contrasena" type="password" placeholder="Ingresa tu contraseña" autocomplete="off" name="contrasena"><ion-icon name="eye-outline"></ion-icon></ion-input>
+    <ion-input [(ngModel)]="confirmarContrasena" type="password" placeholder="Confirma tu contraseña" autocomplete="off" name="confirmarContrasena" ><ion-icon name="eye-outline"></ion-icon></ion-input>
   </form>
   <div class="button">
-    <ion-button expand="block" shape="round">
-      <ion-label>Registrate</ion-label>
+    <ion-button expand="block" shape="round" (click)="addUsuario()">
+      <ion-label >Registrate</ion-label>
     </ion-button>
   </div>
   <div class="footer">
@@ -21,4 +22,5 @@
       ¿Ya tienes una cuenta? <a href="" routerLink="/login">Inicia sesión</a>.
     </p>
   </div>
+
 </ion-content>
