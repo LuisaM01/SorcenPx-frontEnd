@@ -1,5 +1,5 @@
 export interface Reportes {
 
     descripcion: string,
-    fecha_suceso: Date 
+    fecha_suceso: string 
 }

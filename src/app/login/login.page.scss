@@ -43,30 +43,68 @@ ion-content {
     place-items: center;
     gap: 1em;
 
-    ion-input {
-      --background: #e4e4e4;
-      --padding-start: 33px;
-      --padding-end: 33px;
-      --placeholder-color: #050505;
+    input {
+      background: #e4e4e4;
+      padding: 0 33px 0 33px;
       color: #050505;
       width: 90%;
-      height: 65px;
+      height: 55px;
       border-radius: 100px;
-
+      z-index: 0;
+      outline: none;
+      border: none;
+      
+    }
+    .pass {
+      // margin-left: 2.9em;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      
+      input {
+        background: #e4e4e4;
+        padding: 0 33px 0 33px;
+        color: #050505;
+        width: 90%;
+        height: 55px;
+        border-radius: 100px;
+        z-index: 0;
+        outline: none;
+        border: none;
+        margin: 0 auto;
+      }
+  
       ion-icon {
         color: #63199f;
         position: absolute;
-        left: 86%;
-        font-size: 20px;
+        left: 82%;
+        top: 1em;
+        font-size: 10px;
         width: 10%;
         height: 50%;
+        z-index: 150;
+        cursor: pointer;
+        // border: 2px solid red;
+        
+      }       
+    }
+
+    p{
+      border: 2px solid;
+      position: relative;
+      bottom: 24%;
+      left: 15%;
+      a{
+        color: #63199f;
       }
+      margin: 0;
     }
   }
 
   .button {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 0 10px;
 
     ion-button {
@@ -87,11 +125,24 @@ ion-content {
 
 @media only screen and (max-height: 668px) {
   img {
-    width: 75%;
+    width: 65%;
   }
 
   ion-content {
     .form {
+
+      .pass{
+        ion-input{
+          height: 45px;
+        }
+        ion-icon{
+          left: 82%;
+        }
+      }
+      p{
+        bottom: 19%;
+      }
+
       margin-top: 1em;
       ion-input {
         height: 45px;
@@ -99,6 +150,7 @@ ion-content {
     }
 
     .button {
+      margin-top: 8px;
       ion-button {
         height: 40px;
       }
@@ -116,13 +168,14 @@ ion-content {
   }
 }
 
-@media only screen and (min-height: 759px) {
+@media only screen and (min-height: 759px){
   img {
-    width: 90%;
+    width: 80%;
   }
 
   ion-content {
     .form {
+      
       margin-top: 1em;
       ion-input {
         height: 55px;

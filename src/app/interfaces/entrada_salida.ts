@@ -1,6 +1,6 @@
 export interface Entrada_salida {
-    fecha_ingreso: Date,
+    fecha_ingreso: string,
     hora_ingreso: string,
-    fecha_salida: Date,
+    fecha_salida: string,
     hora_salida: string
 }

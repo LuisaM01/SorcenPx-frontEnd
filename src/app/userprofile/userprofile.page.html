@@ -9,15 +9,16 @@
   </ion-header>
 
   <ion-content>
-    <ion-card>
+    <ion-card class="info">
       <ion-card-header>
         <ion-card-title>{{infoUsuario.nombreCompleto}}</ion-card-title>
         <ion-card-content>
+          <ion-card-title><h2>Nombre</h2></ion-card-title>
+          <ion-card-subtitle>{{infoUsuario.nombre}}</ion-card-subtitle>
+          <ion-card-title><h2>Apellido</h2></ion-card-title>
+          <ion-card-subtitle>{{infoUsuario.apellido}}</ion-card-subtitle>
           <ion-card-title><h2>Correo</h2></ion-card-title>
           <ion-card-subtitle>{{infoUsuario.correo}}</ion-card-subtitle>
-
-          <ion-card-title><h2>Nombre aseguradora</h2></ion-card-title>
-          <ion-card-subtitle>SURA</ion-card-subtitle>
 
           <ion-card-title><h2>Rol</h2></ion-card-title>
           <ion-card-subtitle>Cliente</ion-card-subtitle>
@@ -27,43 +28,28 @@
 
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Vehiculos</ion-card-title>
+        <ion-card-title>Vehículos</ion-card-title>
         <ion-card-subtitle
-          >Presiona el vehiculo perteneciente al usuario
+          >Presiona el vehículo perteneciente al usuario
         </ion-card-subtitle>
-
+        <div class="error">
+          <h1>{{message}}</h1>
+        </div>
+        
         <ion-card-content class="vehiculos">
-          <div class="profilevehicle">
-            <ion-card class="cardvehiculo" routerLink="/adminvehicleprofile">
+          <div class="profilevehicle"  *ngFor="let item of vehiculo">
+            <ion-card class="cardvehiculo"  [routerLink]="['adminvehicleprofile/'  + item.id_vehiculo]">
               <img src="../../assets/img/coche.png" alt="" />
-              <ion-card-title>HYD 623</ion-card-title>
+              <ion-card-title>{{item.placa}}</ion-card-title>
             </ion-card>
           </div>
-          <div class="profilevehicle">
-            <ion-card class="cardvehiculo1" routerLink="/adminvehicleprofile">
-              <img src="../../assets/img/motobiker.png" alt="" />
-              <ion-card-title>IAT 439</ion-card-title>
-            </ion-card>
-          </div>
-
-          <div class="profilevehicle">
-            <ion-card class="cardvehiculo2" routerLink="/adminvehicleprofile">
-              <img src="../../assets/img/motobiker.png" alt="" />
-              <ion-card-title>IAT 439</ion-card-title>
-            </ion-card>
-          </div>
-
-          <div class="profilevehicle">
-            <ion-card class="cardvehiculo3" routerLink="/adminvehicleprofile">
-              <img src="../../assets/img/coche.png" alt="" />
-              <ion-card-title>IAT 439</ion-card-title>
-            </ion-card>
-          </div>
+          
         </ion-card-content>
       </ion-card-header>
+
     </ion-card>
 
-    <ion-card routerLink="/usersadmin">
+    <ion-card routerLink="/usersadmin" (click)="deleteUser()">
       <ion-card-header class="delete">
         <ion-card-title>Eliminar usuario</ion-card-title>
       </ion-card-header>

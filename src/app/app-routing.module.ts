@@ -5,7 +5,7 @@ import { AuthGuard } from './utils/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'roles',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -33,30 +33,45 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
-    path: 'roles',
-    loadChildren: () => import('./roles/roles.module').then( m => m.RolesPageModule)
-  },
-  {
-    path: 'loginadmin',
-    loadChildren: () => import('./loginadmin/loginadmin.module').then( m => m.LoginadminPageModule)
-  },
-  {
     path: 'usersadmin',
     canActivate: [AuthGuard],
     loadChildren: () => import('./usersadmin/usersadmin.module').then( m => m.UsersadminPageModule,)
   },
   {
-    path: 'userprofile/:id',
+    path: 'usersadmin/:nombre',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./usersadmin/usersadmin.module').then( m => m.UsersadminPageModule,)
+  },
+  {
+    path: 'userprofile/:id_usuarios',
     loadChildren: () => import('./userprofile/userprofile.module').then( m => m.UserprofilePageModule)
   },
   {
-    path: 'vehicleprofile',
+    path: 'userprofile/:id_usuarios/adminvehicleprofile/:id_vehiculo',
+    loadChildren: () => import('./adminvehicleprofile/adminvehicleprofile.module').then( m => m.AdminvehicleprofilePageModule)
+  },
+  {
+    path: 'vehicleprofile/:id',
     loadChildren: () => import('./vehicleprofile/vehicleprofile.module').then( m => m.VehicleprofilePageModule)
   },
   {
-    path: 'adminvehicleprofile',
-    loadChildren: () => import('./adminvehicleprofile/adminvehicleprofile.module').then( m => m.AdminvehicleprofilePageModule)
+    path: 'historial',
+    loadChildren: () => import('./historial/historial.module').then( m => m.HistorialPageModule)
+  },  {
+    path: 'recuperarcontrasena',
+    loadChildren: () => import('./recuperarcontrasena/recuperarcontrasena.module').then( m => m.RecuperarcontrasenaPageModule)
   },
+  {
+    path: 'codigo',
+    loadChildren: () => import('./codigo/codigo.module').then( m => m.CodigoPageModule)
+  },
+  {
+    path: 'recuperacion',
+    loadChildren: () => import('./recuperacion/recuperacion.module').then( m => m.RecuperacionPageModule)
+  },
+
+
+
 
   /* {
     path: '**',

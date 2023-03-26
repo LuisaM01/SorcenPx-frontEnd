@@ -1,13 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
+
+ion-header{
+  position: absolute;
+  z-index: 1;
+  --background: #fff;
+  ion-toolbar {
+    --background: #fff;
+  }
+}
+
+
 ion-content {
+  .log {
+    width: 100%;
+    margin: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1em 0 0 ;
+    h4{
+      color: #cf3c4f;
+
+      ion-icon{
+        position: relative;
+        top: .2em;
+      }
+    }
+  }
+
   --background: #fff;
   transition: 0.3s;
   .imgs {
     width: 70%;
     position: relative;
     left: 4em;
-    padding: 3em 1em 0 1em;
+    padding: 0 1em 0 1em;
   }
 
   .header {
@@ -45,18 +73,19 @@ ion-content {
   }
 
   .card {
-    margin-top: 3em;
-    overflow: auto;
     display: grid;
+    margin-top: 1em;
+    margin-bottom: 2em;
     grid-template-columns: repeat(auto-fill, minmax(14rem, auto));
+    // border: 2px solid red;
 
     ion-card {
       display: grid;
       place-items: center;
       grid-template-columns: 1fr 1fr;
-      background: #f2f2f2;
+      background: #e0e0e0;
       border-radius: 5px;
-      height: auto;
+      height: auto ;
       max-height: 25vh;
       padding: 2em;
     }
@@ -89,6 +118,10 @@ ion-content {
       font-weight: bold;
       font-size: 2em;
     }
+  }
+
+  ion-fab {
+    bottom: 4em;
   }
 }
 

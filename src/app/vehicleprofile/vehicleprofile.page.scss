@@ -45,6 +45,7 @@ ion-header {
     }
   
     .fechayhora {
+      height: auto;
       ion-card-header {
         ion-card-title {
           color: #000;
@@ -54,6 +55,20 @@ ion-header {
     }
   
     .entrada {
+
+      input {
+        height: 3.5em;
+        width: 100%;
+        padding: .7em;
+        border-radius: .8em;
+        margin-top: 1.5em;
+        margin-bottom: .2em;
+        border: none;
+        outline: none;
+        background: #c2c2c2;
+        color: #000;
+      }
+
   
       ion-card-title h1{
         margin-top: 1em;
@@ -64,14 +79,30 @@ ion-header {
         resize: none;
         width: 100%;
         padding: .7em;
+        margin-top: 0.4em;
         border: none;
         outline: none;
         background: #c2c2c2;
         color: #000;
         border-radius: 10px;
       }
+
+      span {
+        margin: 0;
+        padding: 0;
+      }
     }
   
+    .card-disabled {
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .card-enabled {
+      opacity: 1;
+      transition: opacity .3s ease-in-out;
+    }
+
     .save {
       background: #2dd36f ;
       border-radius: 3px;
@@ -81,6 +112,16 @@ ion-header {
         font-size: 18px;
         text-align: center;
       }
+    }
+
+    .delete {
+      background: #ff4961;
+      // border: 2px solid red;
+
+        ion-card-title {
+          font-size: 18px;
+          color: #fff;
+        }
     }
   }
   

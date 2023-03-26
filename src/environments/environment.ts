@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  endpoint: 'https://sorcenpx.up.railway.app/'
+  // endpoint: 'https://sorcenpx.up.railway.app/',
+  endpoint: 'http://localhost:3000/'
 };
 
 /*

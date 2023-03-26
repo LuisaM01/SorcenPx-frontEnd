@@ -1,5 +1,5 @@
 /* importaciones propias de angular */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { Usuarios } from '../interfaces/usuarios';
 import { UsuarioService } from '../services/usuario.service';
 
 /* importaciones de ionic */
-import { LoadingController } from '@ionic/angular';
+import { IonIcon, LoadingController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -26,6 +26,11 @@ export class RegisterPage implements OnInit {
   contrasena: string = '';
   confirmarContrasena: string = '';
 
+  checkbox: boolean = false;
+
+  showPassword: boolean = false;
+  @ViewChild('eyeIcon') eyeIcon?: IonIcon;
+
   constructor(
     private router: Router,
     private _location: Location,
@@ -37,6 +42,23 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {}
 
+  /* Se muestra o no la contrasena  */
+  togglePassword() {
+    this.showPassword = !this.showPassword;    
+    if (this.eyeIcon) { // Comprueba si eyeIcon es nulo antes de acceder a su propiedad "name"
+      if (this.showPassword) {
+        this.eyeIcon.name = 'eye-off-outline';
+      } else {
+        this.eyeIcon.name = 'eye-outline';
+      }
+    }
+  }
+  
+  getPasswordType(): string {
+    return this.showPassword ? 'text' : 'password';
+  }
+
+  /* funcion para registrar un usuarios */
   async addUsuario() {
     //validamos que el usuario ingrese los valores
     if (
@@ -44,7 +66,7 @@ export class RegisterPage implements OnInit {
       this.apellido == '' ||
       this.correo == '' ||
       this.contrasena == '' ||
-      this.confirmarContrasena == ''
+      this.confirmarContrasena == '' 
     ) {
       const alert = await this.alertController.create({
         header: 'Error!!',
@@ -70,10 +92,10 @@ export class RegisterPage implements OnInit {
 
     /* Validar que la contrasena sean de minimo 8 digitos */
 
-    if (this.contrasena.length < 8 || this.contrasena.length > 16) {
+    if (this.contrasena.length < 8 || this.contrasena.length > 22) {
       const alert = await this.alertController.create({
         header: 'Error!!',
-        message: 'La contraseña debe contener minimo 8 digitos y maximo 16 ',
+        message: 'La contraseña debe contener minimo 8 digitos y maximo 22 ',
         buttons: ['OK'],
       });
 
@@ -97,7 +119,19 @@ export class RegisterPage implements OnInit {
     });
 
     loading.present();
+    
+    if(!this.checkbox) {
+      const alert = await this.alertController.create({
+        header: 'Error!!',
+        message: 'Debe de aceptar las politicas de uso para continuar ',
+        buttons: ['OK'],
+      });
 
+      await alert.present();
+      return;
+    }
+
+    /* uso del servicio importado para hacer la peticion */
     this._usuarioService.register(usuario).subscribe({
       next: async (v) => {
         /* Mensaje de usuario al registrarse */
@@ -116,8 +150,18 @@ export class RegisterPage implements OnInit {
       },
       complete: () => {}
     });
+
+
+
+    this.nombre = '';
+    this.apellido = '';
+    this.correo = '';
+    this.contrasena = '';
+    this.confirmarContrasena = '';
+    this.checkbox = false;
   }
 
+  /* Se hace el manejo de errores y se muestran por pantalla */
   async msjError(e: HttpErrorResponse) {
     if (e.error.message) {
       const alert = await this.alertController.create({

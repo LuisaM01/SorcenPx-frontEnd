@@ -2,9 +2,11 @@ ion-header {
   ion-toolbar {
     --background: #fff;
     ion-buttons {
-      ion-back-button {
+      ion-icon{
         color: #000;
         position: absolute;
+        left: .3em;
+        font-size: 1.8em;
       }
     }
     ion-title {
@@ -25,7 +27,7 @@ ion-content {
 
     .infovehiculo {
       display: grid;
-      grid-template-columns: 50%50%;
+      grid-template-columns: 40% 60%;
       place-items: center;
     }
   }

@@ -1,5 +1,5 @@
 export interface Aseguradora {
     nombre_aseguradora: string,
-    fecha_expedicion: Date,
-    fecha_vencimiento: Date
+    fecha_expedicion: string,
+    fecha_vencimiento: string
 }
